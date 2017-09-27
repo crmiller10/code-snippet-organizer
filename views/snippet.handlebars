@@ -1,0 +1,39 @@
+{{> navbar}}
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h3>Snippet Title: {{#snippets}} {{title}} {{/snippets}}</h3>
+      </div>
+      <div id="single-snippet">
+        {{#snippets}}
+        <div id="code-body-container" class="mb4">
+          <div id="code-body">
+            <pre class="line-numbers" style="white-space:pre-wrap;">
+              <code class="language-{{language}}">
+                {{codeBody}}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div id="language">
+          <h6 class="text-uppercase">Language</h6>
+          <h4>{{language}}</h4>
+        </div>
+        <div id="tags" class="my3">
+          <h6 class="text-uppercase">Tags</h6>
+          <h4>{{tags}}</h4>
+        </div>
+        <div id="notes my3">
+          <h6 class="text-uppercase">Notes</h6>
+          <h4>{{notes}}</h4>
+        </div>
+
+        <div class="mt4">
+          <a href="/" class="btn btn-default bg-light-gray navy bw-md">Back</a>
+          <a href="/editSnippet/?id={{_id}}" class="btn btn-primary bg-blue bw-md">Edit</a>
+          <a href="/deleteSnippet/?id={{_id}}" class="btn btn-danger bg-red bw-md">Delete</a>
+        </div>
+        {{/snippets}}
+      </div>
+    </div>
+  </main>

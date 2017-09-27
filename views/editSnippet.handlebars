@@ -1,0 +1,74 @@
+{{> navbar}}
+<main>
+  <div class="container">
+    <div class="page-header">
+      <h3>Edit Snippet</h3>
+    </div>
+    <form action="/updateSnippet" method="post" id="editSnippet">
+      <div id="single-snippet">
+        <h6>Snippet Title</h6>
+        <div class="form-group">
+          <input class="form-control" type="text" name="title" value="{{snippets.title}}" autofocus/>
+        </div>
+        <div id="code-body-container">
+          <div class="form-group">
+            <textarea class="form-control" id="codeBodyText" name="codeBody" form="editSnippet">{{snippets.codeBody}}</textarea>
+          </div>
+        </div>
+        <div id="codeBodyContainer">
+          <h6>Select Language</h6>
+          <div class="form-group">
+            <select class="form-control w-40" name="language" id="body.language" placeholder="Language">
+              <option value="{{snippets.language}}" selected>{{snippets.language}}</option>
+              <option value="HTML">HTML</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Jade">Jade</option>
+              <option value="Java">Java</option>
+              <option value="JSON">JSON</option>
+              <option value="JSX">JSX</option>
+              <option value="CSS">CSS</option>
+              <option value="Plain Text">Plain Text</option>
+              <option value="SCSS">SCSS</option>
+              <option value="HAML">HAML</option>
+              <option value="Handlebars">Handlebars</option>
+              <option value="C#">C#</option>
+              <option value="EJS">EJS</option>
+              <option value="LESS">LESS</option>
+              <option value="Liquid">Liquid</option>
+              <option value="Makefile">Makefile</option>
+              <option value="Markdown">Markdown</option>
+              <option value="MySQL">MySQL</option>
+              <option value="pgSQL">pgSQL</option>
+              <option value="PHP">PHP</option>
+              <option value="Python">Python</option>
+              <option value="Ruby">Ruby</option>
+              <option value="SASS">SASS</option>
+              <option value="SQL">SQL</option>
+              <option value="Stylus">Stylus</option>
+              <option value="SVG">SVG</option>
+              <option value="XML">XML</option>
+              <option value="YAML">YAML</option>
+            </select>
+          </div>
+        </div>
+        <div id="tags">
+          <h6>Tags</h6>
+          <div class="form-group">
+            <input class="form-control w-40" type="text" name="tags" value="{{snippets.tags}}" />
+          </div>
+        </div>
+        <div id="snippetNotes">
+          <h6>Notes</h6>
+          <div class="form-group">
+            <input class="form-control w-40" type="text" name="notes" value="{{snippets.notes}}" />
+          </div>
+        </div>
+        {{#if snippets._id}}
+        <input type="hidden" name="id" value="{{snippets._id}}" />
+        {{/if}}
+        <a href="/" class="btn btn-default bg-light-gray navy bw-md">Cancel</a>
+        <button class="btn btn-primary bg-blue white bw-md">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</main>

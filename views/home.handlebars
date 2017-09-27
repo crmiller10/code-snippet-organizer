@@ -1,0 +1,47 @@
+{{> navbar}}
+<main>
+  <div class="container">
+    <div class="page-header">
+      <h3>Your Snippets</h3>
+    </div>
+    <div class="row pb4 pt1">
+      <div class="col-sm-6">
+        <form id="queryForm" action="/snippetQuery" method="post">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="text" name="query" value="" class="form-control" placeholder="Search by language or tags">
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <a href="/newSnippet" class="btn btn-primary bg-blue white pull-right">Create Snippet</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="userSnippets">
+          <table class="table table-bordered table-hover bg-white">
+            <thead>
+              <tr>
+                <th>Preview</th>
+                <th>Snippet Title</th>
+                <th>Language</th>
+                <th>Tags</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#snippets}}
+              <tr>
+                <td><a href="/snippet/?id={{_id}}">View</a></td>
+                <td>{{title}}</td>
+                <td>{{language}}</td>
+                <td>{{tags}}</td>
+              </tr>
+              {{/snippets}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

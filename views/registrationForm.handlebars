@@ -1,0 +1,30 @@
+<div id="login" class="form-container">
+  <div class="panel panel-body login-form b0">
+    <form class="register" action="/register" method="post">
+      {{#if failed}}
+      <h3 id="loginFailed" class="text-center">Login Failed</h3>
+      {{/if}}
+      <div class="text-center">
+        <div class="text-center">
+          <h4 class="content-group mb3">Create new account</h4>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Name" autofocus>
+      </div>
+      <div class="form-group">
+        <input type="text" name="username" class="form-control" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" placeholder="Create password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary bg-blue btn-block">Register</button>
+      </div>
+      <div class="form-group text-center">
+        <a href="/" type="button" class="btn-link"><i class="icon-arrow-left13 position-left"></i> Back to login form</a>
+      </div>
+    </form>
+  </div>
+</div>
+

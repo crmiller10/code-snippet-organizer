@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Snippet Manager</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="http://unpkg.com/tachyons-skins@4.1.0/css/tachyons-skins.min.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="page-content">
+        {{{body}}}
+      </div>
+    </div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/prism.js"></script>
+    <script src="/js/prism-line-numbers.js"></script>
+    <script src="/js/prism-normalize-whitespace.js"></script>
+    <script src="/js/autosize.min.js"></script>
+    <script>
+      autosize(document.querySelectorAll('textarea'));
+    </script>
+    <script type="text/javascript">
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+      'remove-trailing': true,
+      'remove-indent': true,
+      'left-trim': true,
+      'right-trim': true
+    });
+  </script>
+
+  </body>
+</html>

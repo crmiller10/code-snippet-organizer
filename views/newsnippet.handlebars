@@ -1,0 +1,61 @@
+{{> navbar}}
+  <main class="container">
+    <div class="page-header">
+      <h3>Create New Snippet</h3>
+    </div>
+      <form id="newSnipForm" class="snippet-form" action="/addSnippet" method="post">
+        <div class="">
+          <div class="form-group">
+            <input class="form-control" type="text" name="title" placeholder="Add Snippet Title..." required autofocus/>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" type="text" name="codeBody" id="codeBody" placeholder="Past code here..." required> </textarea>
+          </div>
+
+          <div class="form-group">
+            <select class="form-control w-40" name="language" id="body.language" placeholder="Language">
+              <option value="HTML">HTML</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Jade">Jade</option>
+              <option value="Java">Java</option>
+              <option value="JSON">JSON</option>
+              <option value="JSX">JSX</option>
+              <option value="CSS">CSS</option>
+              <option value="Plain Text">Plain Text</option>
+              <option value="SCSS">SCSS</option>
+              <option value="HAML">HAML</option>
+              <option value="Handlebars">Handlebars</option>
+              <option value="C#">C#</option>
+              <option value="EJS">EJS</option>
+              <option value="LESS">LESS</option>
+              <option value="Liquid">Liquid</option>
+              <option value="Makefile">Makefile</option>
+              <option value="Markdown">Markdown</option>
+              <option value="MySQL">MySQL</option>
+              <option value="pgSQL">pgSQL</option>
+              <option value="PHP">PHP</option>
+              <option value="Python">Python</option>
+              <option value="Ruby">Ruby</option>
+              <option value="SASS">SASS</option>
+              <option value="SQL">SQL</option>
+              <option value="Stylus">Stylus</option>
+              <option value="SVG">SVG</option>
+              <option value="XML">XML</option>
+              <option value="YAML">YAML</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input class="form-control w-40" type="text" name="tags" placeholder="Add tags..." />
+          </div>
+          <div class="form-group">
+            <input class="form-control w-40" type="text" name="notes" placeholder="Add Notes..."/>
+          </div>
+          {{#if user._id}}
+            <input type="hidden" name="author" value="{{user.username}}"/>
+          {{/if}}
+          <a href="/" class="btn btn-default bg-light-gray navy bw-md">Cancel</a>
+          <button class="btn btn-primary bg-blue bw-md">Add Snippet</button>
+        </div>
+      </form>
+
+  </main>
