@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('express-flash-messages');
 const Routes = require('./routes/routes');
+
 // require stuff for passport
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -41,7 +42,6 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-
 const env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
@@ -58,31 +58,7 @@ app.use(
     saveUninitialized: true
   })
 );
-/// error handlers
 
-// development error handler
-// will print stacktrace
-// if (app.get('env') === 'development') {
-    app.use((err, req, res, next) => {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err,
-            title: 'error'
-        });
-    });
-// }
-
-// production error handler
-// no stacktraces leaked to user
-// app.use((err, req, res, next) => {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//         message: err.message,
-//         error: {},
-//         title: 'error'
-//     });
-// });
 //static files
 app.use(express.static('public/'));
 
