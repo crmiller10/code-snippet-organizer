@@ -41,6 +41,11 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
+
+const env = process.env.NODE_ENV || 'development';
+app.locals.ENV = env;
+app.locals.ENV_DEVELOPMENT = env == 'development';
+
 // Using handlebars instead of mustache
 app.engine('handlebars', exphbs({ defaultLayout: 'layout' }));
 app.set('views', './views');
@@ -53,7 +58,31 @@ app.use(
     saveUninitialized: true
   })
 );
+/// error handlers
 
+// development error handler
+// will print stacktrace
+// if (app.get('env') === 'development') {
+    app.use((err, req, res, next) => {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err,
+            title: 'error'
+        });
+    });
+// }
+
+// production error handler
+// no stacktraces leaked to user
+// app.use((err, req, res, next) => {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//         message: err.message,
+//         error: {},
+//         title: 'error'
+//     });
+// });
 //static files
 app.use(express.static('public/'));
 
@@ -70,8 +99,9 @@ mongoose
   .connect('mongodb://localhost:27017/snippet-app', {
     useMongoClient: true
   })
-  .then(function() {
-    return app.listen(9000, function() {
-      return console.log('http://localhost:9000');
-    });
-  });
+  // .then(function() {
+  //   return app.listen(4000, function() {
+  //     return console.log('http://localhost:4000');
+  //   });
+  // });
+  module.exports = app;
