@@ -3,10 +3,11 @@
 
   ## At a minimum, snippets should have:
 
-* a title
+* Code Snippet Organizer
 * a body (the code)
 * optional notes
 * a language
+* Node, Express, Mongoose, MongoDB, Handlebars...
 * tags -- that is, user-defined words or phrases that classify the code, like "authentication", "front-end", "middleware", or "database".
 
   ### Your application must:
@@ -35,4 +36,10 @@ Launch local project
 
 ```sh
 $ node app.js
+```
+
+Automate SASS workflow in new terminal window/tab.
+
+```sh
+$ gulp
 ```
